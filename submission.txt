@@ -1,0 +1,29 @@
+1. {1, 2, 3, 4}
+2. "ref"
+3. 0: {Array(3) => true}
+   1: {Array(e) => false}
+
+---
+
+const hasDuplicate = arr => new Set(arr).size !== arr.length
+
+---
+
+function isVowel(char){
+	return "aeiou".includes(char);
+}
+
+function vowelCount(string){
+	const vMap = new Map();
+	for(let char of string){
+		let lowerCase = char.toLowerCase();
+		if(isVowel(lowerCase)){
+			if(vMap.has(lowerCase)){
+				vMap.set(lowerCase, vMap.get(lowerCase) + 1);
+			}else{
+				vMap.set(lowerCase, 1);
+			}
+		}	
+	}
+	return vMap;
+}
